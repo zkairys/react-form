@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: linear-gradient(to left, #FBF2EA, rgba(#FFE7C8, 1));
+    width: 100%;
+
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: 1074px;
+    position: relative;
+    width: (355px/375px) * 100vw;
+
+    @include min-screen(768px) {
+        width: (528px/768px) * 100vw;
+    }
+
+    @include min-screen(1024px) {
+        width: (684px/1024px) * 100vw;
+    }
+
+    @include min-screen(1440px) {
+        width: 1074px;
+    }
+
+
+    &--inside {
+        width: calc(100% - 40px);
+
+        @include min-screen(1024px) {
+            width: calc(100% - 80px);
+        }
+
+    }
+
+}
