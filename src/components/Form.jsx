@@ -59,7 +59,7 @@ class Form extends React.PureComponent {
               className="form__agree__input"
               required="required"
             />
-            <label htmlfor="agre">
+            <label htmlFor="agre">
               By accepting this agreement, I acknowledge that I have read,
               understand and agree to the.
             </label>
