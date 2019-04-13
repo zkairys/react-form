@@ -5,17 +5,19 @@ import "./App.scss";
 import Form from "./components/Form";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <main>
-          <div className="inner">
-            <Form />
-          </div>
-        </main>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <main>
+                    <article>
+                        <div className="inner inner--border inner--backgroud-white">
+                            <Form />
+                        </div>
+                    </article>
+                </main>
+            </div>
+        );
+    }
 }
 
 export default App;

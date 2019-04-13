@@ -6,7 +6,10 @@
 
 //general
 @import "scss/general/general.base.scss";
-@import "scss/general/general.buttons.scss";
+@import "scss/general/general.btn.scss";
+@import "scss/general/general.title.scss";
+@import "scss/general/general.text.scss";
 
 //blocks
 @import "scss/blocks/blocks.form.scss";
+@import "scss/blocks/blocks.checkbox.scss";

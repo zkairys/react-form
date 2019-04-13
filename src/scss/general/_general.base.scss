@@ -10,6 +10,14 @@ body {
 
 }
 
+main {
+    min-height: 100vh;
+}
+
+article {
+    margin-top: calc(15vh);
+}
+
 .inner {
     margin: 0 auto;
     max-width: 1074px;
@@ -36,6 +44,14 @@ body {
             width: calc(100% - 80px);
         }
 
+    }
+
+    &--border {
+        border: 2px solid $orange;
+    }
+
+    &--backgroud-white {
+        background-color: $white;
     }
 
 }

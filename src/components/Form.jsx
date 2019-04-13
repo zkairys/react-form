@@ -2,6 +2,7 @@ import React from "react";
 
 //components
 import FormIntro from "./FormIntro";
+import FormFirst from "./FormFirst";
 import FormSecond from "./FormSecond";
 import FormThird from "./FormThird";
 import FormFourth from "./FormFourth";
@@ -42,37 +43,12 @@ class Form extends React.PureComponent {
     return (
       <form action="" method="post" className="form">
         <div className="inner inner--inside">
-          <section className="form form-payment">
-            <div />
-          </section>
-
-          <section className="form form-payment">
-            <div />
-          </section>
-
-          <div className="form__agree">
-            <input
-              type="checkbox"
-              id="agre"
-              name="agree"
-              value="agree"
-              className="form__agree__input"
-              required="required"
-            />
-            <label htmlFor="agre">
-              By accepting this agreement, I acknowledge that I have read,
-              understand and agree to the.
-            </label>
-          </div>
-
-          <button
-            className="btn btn--center"
-            type="submit"
-            form="form"
-            value="Join"
-          >
-            Submit
-          </button>
+          <FormIntro />
+          <FormFirst />
+          <FormSecond />
+          <FormThird />
+          <FormFourth />
+          <FormSummary />
         </div>
       </form>
     );
