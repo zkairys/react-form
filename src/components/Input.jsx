@@ -1,20 +1,17 @@
 import React from "react";
 
-const TxtInput = props => (
-    <div
-        className={
-            props.input ? "text-input text-input__filled" : " text-input"
-        }
-    >
+const Input = props => (
+    <div className={props.input ? "input input__filled" : " input"}>
         <input
-            type="text"
+            type={props.type}
             id={props.name}
             name={props.name}
             value={props.input}
             onChange={props.handleChange}
+            max={props.max}
         />
         <label htmlFor={props.name}>{props.label}</label>
     </div>
 );
 
-export default TxtInput;
+export default Input;

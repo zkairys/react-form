@@ -15,7 +15,11 @@ main {
 }
 
 article {
-    margin-top: calc(15vh);
+    margin-top: calc(5vh);
+
+    @include min-screen(1024px) {
+        margin-top: calc(15vh);
+    }
 }
 
 .inner {

@@ -6,6 +6,10 @@
             font: 400 18px/24px $secondary;
         }
 
+        span {
+            color: $orange;
+        }
+
         &+p {
             margin-top: 15px;
         }

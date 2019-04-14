@@ -12,12 +12,15 @@ class Form extends React.PureComponent {
     state = {
         agree: false,
         name: "",
-        step: 1,
-        active: false
+        email: "",
+        age: "",
+        job: "",
+        school: "",
+        step: 1
     };
 
     // next step
-    nextStep = () => {
+    nextStep = name => {
         const { step } = this.state;
         this.setState({
             step: step + 1
@@ -33,20 +36,27 @@ class Form extends React.PureComponent {
     };
 
     handleChange = e => {
+        let value = e.target.value;
+        if (e.target.type === "number" && e.target.max) {
+            if (value.length > 2) {
+                value = value.slice(0, 2);
+            }
+        }
+
         this.setState({
-            // [e.target.name]: e.target.value
+            ...this.state,
             [e.target.name]:
-                e.target.type === "checkbox" ? e.target.checked : e.target.value
+                e.target.type === "checkbox" ? e.target.checked : value
         });
     };
 
     render() {
-        const { step, active, name, agree } = this.state;
+        const { step, name, agree, email, age, job, school } = this.state;
 
         return (
             <form action="" method="post" className="form">
                 <div className="inner inner--inside">
-                    {this.state.step === 1 && (
+                    {step === 1 && (
                         <FormIntro
                             handleChange={this.handleChange}
                             agree={agree}
@@ -54,7 +64,7 @@ class Form extends React.PureComponent {
                         />
                     )}
 
-                    {this.state.step === 2 && (
+                    {step === 2 && (
                         <FormFirst
                             nextStep={this.nextStep}
                             prevStep={this.prevStep}
@@ -63,29 +73,43 @@ class Form extends React.PureComponent {
                         />
                     )}
 
-                    {this.state.step === 3 && (
+                    {step === 3 && (
                         <FormSecond
                             nextStep={this.nextStep}
                             prevStep={this.prevStep}
+                            email={email}
+                            handleChange={this.handleChange}
                         />
                     )}
 
-                    {this.state.step === 3 && (
+                    {step === 4 && (
                         <FormThird
                             nextStep={this.nextStep}
                             prevStep={this.prevStep}
+                            age={age}
+                            handleChange={this.handleChange}
                         />
                     )}
 
-                    {this.state.step === 3 && (
+                    {step === 5 && (
                         <FormFourth
                             nextStep={this.nextStep}
                             prevStep={this.prevStep}
+                            age={age}
+                            job={job}
+                            school={school}
+                            handleChange={this.handleChange}
                         />
                     )}
 
-                    {this.state.step === 3 && (
-                        <FormSummary prevStep={this.prevStep} />
+                    {step === 6 && (
+                        <FormSummary
+                            name={name}
+                            email={email}
+                            age={age}
+                            job={job}
+                            school={school}
+                        />
                     )}
                 </div>
             </form>
