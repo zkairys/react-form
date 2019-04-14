@@ -13,7 +13,7 @@ class Form extends React.PureComponent {
         agree: false,
         name: "",
         step: 1,
-        active: true
+        active: false
     };
 
     // next step
@@ -38,11 +38,10 @@ class Form extends React.PureComponent {
             [e.target.name]:
                 e.target.type === "checkbox" ? e.target.checked : e.target.value
         });
-        console.log(e.target.value, e.target.checked);
     };
 
     render() {
-        const { step, active, name } = this.state;
+        const { step, active, name, agree } = this.state;
 
         return (
             <form action="" method="post" className="form">
@@ -50,20 +49,44 @@ class Form extends React.PureComponent {
                     {this.state.step === 1 && (
                         <FormIntro
                             handleChange={this.handleChange}
-                            agree={this.state.agree}
+                            agree={agree}
                             nextStep={this.nextStep}
                         />
                     )}
 
-                    {this.state.step === 2 && <FormFirst />}
+                    {this.state.step === 2 && (
+                        <FormFirst
+                            nextStep={this.nextStep}
+                            prevStep={this.prevStep}
+                            name={name}
+                            handleChange={this.handleChange}
+                        />
+                    )}
 
-                    {this.state.step === 3 && <FormSecond />}
+                    {this.state.step === 3 && (
+                        <FormSecond
+                            nextStep={this.nextStep}
+                            prevStep={this.prevStep}
+                        />
+                    )}
 
-                    {this.state.step === 3 && <FormThird />}
+                    {this.state.step === 3 && (
+                        <FormThird
+                            nextStep={this.nextStep}
+                            prevStep={this.prevStep}
+                        />
+                    )}
 
-                    {this.state.step === 3 && <FormFourth />}
+                    {this.state.step === 3 && (
+                        <FormFourth
+                            nextStep={this.nextStep}
+                            prevStep={this.prevStep}
+                        />
+                    )}
 
-                    {this.state.step === 3 && <FormSummary />}
+                    {this.state.step === 3 && (
+                        <FormSummary prevStep={this.prevStep} />
+                    )}
                 </div>
             </form>
         );

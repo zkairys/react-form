@@ -18,7 +18,27 @@ const FormFirst = props => {
                         quasi architecto beatae vitae dicta sunt explicabo.
                     </p>
                 </div>
-                <TxtInput name="name" label="Name" onChange={null} />
+                <TxtInput
+                    name="name"
+                    label="Name"
+                    handleChange={props.handleChange}
+                    input={props.name}
+                />
+                <div className="flex-wrap flex-wrap--align-baseline">
+                    <button
+                        className="btn btn--uppercase"
+                        onClick={props.prevStep}
+                    >
+                        Back
+                    </button>
+
+                    <button
+                        className="btn btn--uppercase"
+                        onClick={props.nextStep}
+                    >
+                        Continue
+                    </button>
+                </div>
             </div>
         </section>
     );
