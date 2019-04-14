@@ -16,9 +16,11 @@ main {
 
 article {
     margin-top: calc(5vh);
+    margin-bottom: calc(8vh);
 
     @include min-screen(1024px) {
         margin-top: calc(15vh);
+        margin-bottom: calc(10vh);
     }
 }
 
