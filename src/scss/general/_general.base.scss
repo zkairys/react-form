@@ -20,25 +20,29 @@ article {
 
 .inner {
     margin: 0 auto;
-    max-width: 1074px;
+    max-width: 800px;
     position: relative;
     width: (355px/375px) * 100vw;
 
     @include min-screen(768px) {
-        width: (528px/768px) * 100vw;
+        width: (548px/768px) * 100vw;
     }
 
     @include min-screen(1024px) {
-        width: (684px/1024px) * 100vw;
+        width: (624px/1024px) * 100vw;
     }
 
     @include min-screen(1440px) {
-        width: 1074px;
+        width: 800px;
     }
 
 
     &--inside {
         width: calc(100% - 40px);
+
+        @include min-screen(768px) {
+            width: calc(100% - 60px);
+        }
 
         @include min-screen(1024px) {
             width: calc(100% - 80px);
@@ -54,4 +58,13 @@ article {
         background-color: $white;
     }
 
+}
+
+.flex-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    &--align-baseline {
+        align-items: baseline;
+    }
 }

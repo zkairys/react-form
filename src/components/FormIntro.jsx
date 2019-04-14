@@ -10,7 +10,7 @@ const FormIntro = props => {
                 <h1 className="title title--big">
                     Sed ut perspiciatis unde omnis
                 </h1>
-                <div className="form-section__body__text">
+                <div className="text">
                     <p>
                         Sed ut perspiciatis unde omnis iste natus error sit
                         voluptatem accusantium doloremque laudantium, totam rem
@@ -31,7 +31,23 @@ const FormIntro = props => {
                     </p>
                 </div>
 
-                <Checkbox name="agree" label="Agree" onChange={null} />
+                <div className="flex-wrap flex-wrap--align-baseline">
+                    <Checkbox
+                        name="agree"
+                        label="Agree"
+                        onChange={props.handleChange}
+                        agree={props.agree}
+                    />
+
+                    {props.agree && (
+                        <button
+                            className="btn btn--uppercase"
+                            onClick={props.nextStep}
+                        >
+                            Continue
+                        </button>
+                    )}
+                </div>
             </div>
         </section>
     );

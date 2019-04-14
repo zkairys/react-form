@@ -1,0 +1,30 @@
+.btn {
+    background: none;
+    box-shadow: none;
+    border: 2px solid $orange;
+    color: $orange;
+    display: flex;
+    font: 400 16px/22px $secondary;
+    height: 45px;
+    justify-content: center;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+    width: 110px;
+    z-index: 9;
+
+    @include min-screen(1024px) {
+        font: 400 18px/24px $secondary;
+        width: 130px;
+    }
+
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        background-color: $orange;
+        color: $white;
+    }
+}

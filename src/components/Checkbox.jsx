@@ -7,6 +7,7 @@ const Checkbox = props => (
             name={props.name}
             type="checkbox"
             onChange={props.onChange}
+            agree={props.agree}
         />
         <label htmlFor={props.name}>{props.label}</label>
     </div>

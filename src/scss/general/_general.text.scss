@@ -1,0 +1,13 @@
+.text {
+    p {
+        font: 400 16px/22px $secondary;
+
+        @include min-screen(1024px) {
+            font: 400 18px/24px $secondary;
+        }
+
+        &+p {
+            margin-top: 15px;
+        }
+    }
+}

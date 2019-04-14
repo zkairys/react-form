@@ -1,4 +1,6 @@
 .checkbox {
+    margin-top: 50px;
+
     input {
         display: none;
 
@@ -18,11 +20,15 @@
         color: $orange;
         cursor: pointer;
         display: block;
-        font: 16px/17px $primary;
+        font: 16px/20px $primary;
         height: 41px;
         padding: 13px;
         position: relative;
         margin-left: 50px;
+
+        @include min-screen(1024px) {
+            font: 18px/22px $primary;
+        }
 
         &::before,
         &::after {
@@ -46,9 +52,9 @@
             border-color: $orange;
             border-width: 0 3px 3px 0;
             height: 16px;
-            left: -34px;
+            left: -33px;
             opacity: 0;
-            top: 9px;
+            top: 11px;
             transform: rotate(45deg);
             width: 8px;
         }

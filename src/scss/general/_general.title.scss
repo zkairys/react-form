@@ -1,8 +1,12 @@
 .title {
 
     &--big {
-        font: 700 36px/40px $primary;
+        font: 700 30px/36px $primary;
         padding-bottom: 30px;
+
+        @include min-screen(1024px) {
+            font: 700 36px/42px $primary;
+        }
 
     }
 
