@@ -1,0 +1,16 @@
+//helpers
+@import "scss/helpers/helpers.media.scss";
+@import "scss/helpers/helpers.functions.scss";
+@import "scss/helpers/helpers.mixins.scss";
+@import "scss/helpers/helpers.variables.scss";
+
+//general
+@import "scss/general/general.base.scss";
+@import "scss/general/general.btn.scss";
+@import "scss/general/general.title.scss";
+@import "scss/general/general.text.scss";
+
+//blocks
+@import "scss/blocks/blocks.form.scss";
+@import "scss/blocks/blocks.checkbox.scss";
+@import "scss/blocks/blocks.input.scss";
